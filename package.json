@@ -1,0 +1,76 @@
+{
+  "name": "bemed-components",
+  "version": "1.0.0",
+  "description": "BEM-flavored components",
+  "main": "index.js",
+  "repository": "https://github.com/vkalinichev/bemed-components.git",
+  "author": "Vladimir Kalinichev <wrumly@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "jest": "^20.0.4",
+    "react": "^15.5.4",
+    "react-test-renderer": "^15.5.4"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "jest"
+    ],
+    "env": {
+      "jest/globals": true
+    },
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "react/prop-types": 0
+    }
+  }
+}

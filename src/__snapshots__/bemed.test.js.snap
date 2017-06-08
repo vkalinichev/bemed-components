@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block should create block 1`] = `
+<div
+  className="block-name"
+/>
+`;
+
+exports[`Block should create block with custom tag (SPAN) 1`] = `
+<span
+  className="block-name"
+/>
+`;
+
+exports[`Element should create element 1`] = `
+<div
+  className="block-name__element"
+/>
+`;
+
+exports[`Element should create element with custom tag (SPAN) 1`] = `
+<span
+  className="block-name"
+/>
+`;
+
+exports[`Modifier should add few string modifiers for block 1`] = `
+<div
+  className="block-name__element block-name__element_cool block-name__element_feel"
+/>
+`;
+
+exports[`Modifier should add string modifier for block 1`] = `
+<div
+  className="block-name__element block-name__element_cool"
+/>
+`;
+
+exports[`Modifier should add truly modifier for block 1`] = `
+<div
+  className="block-name__element  block-name__element_cool"
+/>
+`;
+
+exports[`Modifier should add valued modifier for block 1`] = `
+<span
+  className="block-name  block-name_cool_lala"
+/>
+`;
+
+exports[`Modifier should not add falsy modifier for block 1`] = `
+<div
+  className="block-name__element"
+/>
+`;

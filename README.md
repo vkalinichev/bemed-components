@@ -1,7 +1,7 @@
 # bemed components
 BEM-flavored React Components.
 
-[Styled Components][styled-components] is great! It allows to write clean markup code. But sometimes you want to keep CSS in CSS.
+[styled-components] is great! It allows to write clean markup code. But sometimes you want to keep CSS in CSS.
 
 [BEM] (methodology) is fabulous and time-tested but working directly with its classnames in markup is not a pleasure.
  

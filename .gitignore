@@ -1,6 +1,10 @@
 .idea
 
-node_modules
+/lib
+/node_modules
+/package
+
+*.tgz
 
 .DS_Store
 .Thumbs.db

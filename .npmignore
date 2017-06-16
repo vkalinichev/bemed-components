@@ -1,0 +1,14 @@
+/.idea
+
+/node_modules
+/package
+
+.editorconfig
+.eslintignore
+.gitignore
+.npmignore
+yarn.lock
+
+*.tgz
+.DS_Store
+.Thumbs.db

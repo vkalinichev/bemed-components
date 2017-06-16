@@ -79,7 +79,7 @@ const BemedComponent = ({opened}) => (
       <span class="home__window home__window_large"> + </span>  
       <span class="home__window"> + </span>
     </div>
-    <div class={`home__door ${ opened ? `home__door_opened` : '' `}"></div>
+    <div class={`home__door ${ opened ? 'home__door_opened' : '' }`}></div>
   </div>  
 ```
 

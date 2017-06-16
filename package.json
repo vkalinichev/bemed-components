@@ -80,5 +80,11 @@
       ],
       "react/prop-types": 0
     }
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/lib/",
+      "/node_modules/"
+    ]
   }
 }

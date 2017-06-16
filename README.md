@@ -58,17 +58,29 @@ const Window = b.span('window')
 ```
 
 ### Write your clean and expressive markup
-```javascript
+```jsx
 const BemedComponent = ({opened}) => (
-  <Home>                                  //  <div class="home">
-    <Roof mod={{color: 'red'}}/>          //    <div class="home__roof home__roof_color_red">  
-    <Windows>                             //    <div class="home__windows">  
-      <Window mod="large"> + </Window>    //      <span class="home__window home__window_large"> + </span>  
-      <Window> + </Window>                //      <span class="home__window"> + </span>
-    </Windows>                            //    </div>  
-    <Door mod={{opened}}/>                //    <div class="home__door home__door_opened"></div>  
-  </Home>                                 //  </div>  
+ <Home>
+   <Roof mod={{color: 'red'}}/>     
+   <Windows>
+     <Window mod="large"> + </Window>
+     <Window> + </Window>
+   </Windows>
+   <Door mod={{opened}}/>
+ </Home>
 )
+```
+That be compiled to
+```jsx
+const BemedComponent = ({opened}) => (
+  <div class="home">
+    <div class="home__roof home__roof_color_red"> 
+    <div class="home__windows">
+      <span class="home__window home__window_large"> + </span>  
+      <span class="home__window"> + </span>
+    </div>
+    <div class={`home__door ${ opened ? `home__door_opened` : '' `}"></div>
+  </div>  
 ```
 
 ---

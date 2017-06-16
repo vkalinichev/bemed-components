@@ -1,9 +1,32 @@
 # bemed components
+
+
+[![npm][npm-img]][npm]
+[![Build Status][ci-img]][ci]
+[![npm][npm-dwnlds-img]][npm]
+[![Package Quality][quality-img]][quality]
+[![license][lic-img]][lic]
+
+[npm-img]: https://img.shields.io/npm/v/bemed-components.svg
+[npm]:     https://npmjs.org/package/bemed-components
+
+[ci-img]:  https://img.shields.io/travis/vkalinichev/bemed-components.svg
+[ci]:      https://travis-ci.org/vkalinichev/bemed-components
+
+[npm-dwnlds-img]: https://img.shields.io/npm/dt/bemed-components.svg
+
+[quality-img]: http://npm.packagequality.com/shield/bemed-components.svg
+[quality]: http://packagequality.com/#?package=bemed-components
+
+[lic-img]: https://img.shields.io/github/license/vkalinichev/bemed-components.svg
+[lic]:     https://github.com/vkalinichev/bemed-components/blob/master/License
+
+
 BEM-flavored React Components.
 
 [styled-components] is great! It allows to write clean markup code. But sometimes you want to keep CSS in CSS.
 
-[BEM] (methodology) is fabulous and time-tested but working directly with its classnames in markup is not a pleasure.
+[BEM] is fabulous and time-tested but working directly with its classnames in markup is not a pleasure.
  
 **bemed components** allows to write expressive and clear markup code. Its just creates an shortcutted Components with BEM classnames inside.
 

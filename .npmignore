@@ -7,8 +7,10 @@
 .eslintignore
 .gitignore
 .npmignore
+.travis.yml
 yarn.lock
 
 *.tgz
+*.log
 .DS_Store
 .Thumbs.db

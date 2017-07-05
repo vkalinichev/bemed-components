@@ -40,36 +40,71 @@ describe('Modifier', () => {
 
   it('should add string modifier for block', () => {
     const b = bemed('block-name')
-    const Element = b('element')
+    const Element = b()
     const component = renderer.create(<Element mod="cool"/>)
     expect(component.toJSON()).toMatchSnapshot()
   })
 
   it('should add few string modifiers for block', () => {
     const b = bemed('block-name')
-    const Element = b('element')
+    const Element = b()
     const component = renderer.create(<Element mod="cool feel"/>)
     expect(component.toJSON()).toMatchSnapshot()
   })
 
   it('should add truly modifier for block', () => {
     const b = bemed('block-name')
-    const Element = b('element')
+    const Element = b()
     const component = renderer.create(<Element mod={{cool: true}}/>)
     expect(component.toJSON()).toMatchSnapshot()
   })
 
   it('should not add falsy modifier for block', () => {
     const b = bemed('block-name')
-    const Element = b('element')
+    const Element = b()
     const component = renderer.create(<Element mod={{cool: false}}/>)
     expect(component.toJSON()).toMatchSnapshot()
   })
 
   it('should add valued modifier for block', () => {
     const b = bemed('block-name')
+    const Element = b()
+    const component = renderer.create(<Element mod={{cool: 'cool'}}/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should add string modifier for element', () => {
+    const b = bemed('block-name')
+    const Element = b('element')
+    const component = renderer.create(<Element mod="cool"/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should add few string modifiers for element', () => {
+    const b = bemed('block-name')
+    const Element = b('element')
+    const component = renderer.create(<Element mod="cool feel"/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should add truly modifier for element', () => {
+    const b = bemed('block-name')
+    const Element = b('element')
+    const component = renderer.create(<Element mod={{cool: true}}/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should not add falsy modifier for element', () => {
+    const b = bemed('block-name')
+    const Element = b('element')
+    const component = renderer.create(<Element mod={{cool: false}}/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should add valued modifier for element', () => {
+    const b = bemed('block-name')
     const Element = b.span('element')
-    const component = renderer.create(<Element mod={{cool: 'lala'}}/>)
+    const component = renderer.create(<Element mod={{cool: 'cool'}}/>)
     expect(component.toJSON()).toMatchSnapshot()
   })
 

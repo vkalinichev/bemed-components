@@ -24,11 +24,14 @@
 
 BEM-flavored React Components.
 
-[styled-components] is great! It allows to write clean markup code. But sometimes you want to keep CSS in CSS.
+[styled-components] is great! It allows to write clean JSX code.
+But sometimes you want to keep CSS in CSS.
 
-[BEM] is fabulous and time-tested but working directly with its classnames in markup is not a pleasure.
+[BEM] is fabulous and time-tested but working directly
+with its classnames in markup is not a pleasure.
  
-**bemed components** allows to write expressive and clear markup code. Its just creates an shortcutted Components with BEM classnames inside.
+**bemed components** allows to write expressive and clean JSX code.
+Its just creates an shortcutted Components with BEM classnames inside.
 
 ## Install
 ```shell
@@ -57,7 +60,7 @@ const Windows = b('windows')
 const Window = b.span('window') 
 ```
 
-### Write your clean and expressive markup
+### Write clean and expressive JSX
 ```jsx
 const BemedComponent = ({opened}) => (
  <Home>
@@ -70,7 +73,7 @@ const BemedComponent = ({opened}) => (
  </Home>
 )
 ```
-That be compiled to
+That will be compiled to
 ```jsx
 const BemedComponent = ({opened}) => (
   <div class="home">

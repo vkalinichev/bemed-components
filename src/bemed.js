@@ -1,30 +1,52 @@
 import React from 'react'
 import tags from './tags'
-
 import addModificators from './addModificators'
 
-const bemed = (blockName) => {
+function BemedComponent(tagName, className, {mod, ...rest}) {
+  return React.createElement(
+    tagName,
+    {
+      ...rest,
+      className: addModificators(className, mod)
+    })
+}
 
-  const b = function b (elementName, tagName = 'div') {
+/**
+ * Creates Block context and returns Block-generator
+ * @param blockName
+ * @returns {b} Generator of Blocks and Elements
+ */
+function bemed(blockName) {
 
-    if ( typeof elementName === 'function' ) return b.bind(null, null, elementName)
+  /**
+   * Generator of Blocks and Elements
+   * @param {string} tagName - (optional) custom tag for Block or Element
+   * @param {string} elementName
+   * @returns {Component}
+   * @returns {function} Genetator with custom Component
+   */
+  function b(tagName, elementName) {
 
-    let className = elementName ? `${ blockName }__${ elementName }` : blockName
-
-    const BemedComponent = ({mod, ...rest}) => {
-
-      className = addModificators(className, mod)
-
-      return React.createElement(tagName, {...rest, className})
+    if (typeof tagName === 'function') {
+      return b.bind(null, tagName, elementName)
     }
 
-    BemedComponent.displayName = className
+    if (elementName === undefined && tags.indexOf(tagName) === -1 ) {
+      elementName = tagName
+      tagName = 'div'
+    }
 
-    return BemedComponent
+    const isBlock = elementName === undefined
+    const className = isBlock ? blockName : `${ blockName }__${ elementName }`
+
+    const Component = BemedComponent.bind(null, tagName, className)
+    Component.displayName = className
+
+    return Component
   }
 
-  for (let i = 0; i < tags.length; i++ ) {
-    b[tags[i]] = b.bind(null, null, tags[i])
+  for (let i = 0; i < tags.length; i++) {
+    b[tags[i]] = b.bind(null, tags[i])
   }
 
   return b

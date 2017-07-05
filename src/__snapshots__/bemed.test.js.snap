@@ -20,11 +20,17 @@ exports[`Element should create element 1`] = `
 
 exports[`Element should create element with custom tag (SPAN) 1`] = `
 <span
-  className="block-name"
+  className="block-name__element"
 />
 `;
 
 exports[`Modifier should add few string modifiers for block 1`] = `
+<div
+  className="block-name block-name_cool block-name_feel"
+/>
+`;
+
+exports[`Modifier should add few string modifiers for element 1`] = `
 <div
   className="block-name__element block-name__element_cool block-name__element_feel"
 />
@@ -32,23 +38,47 @@ exports[`Modifier should add few string modifiers for block 1`] = `
 
 exports[`Modifier should add string modifier for block 1`] = `
 <div
+  className="block-name block-name_cool"
+/>
+`;
+
+exports[`Modifier should add string modifier for element 1`] = `
+<div
   className="block-name__element block-name__element_cool"
 />
 `;
 
 exports[`Modifier should add truly modifier for block 1`] = `
 <div
+  className="block-name  block-name_cool"
+/>
+`;
+
+exports[`Modifier should add truly modifier for element 1`] = `
+<div
   className="block-name__element  block-name__element_cool"
 />
 `;
 
 exports[`Modifier should add valued modifier for block 1`] = `
+<div
+  className="block-name  block-name_cool_cool"
+/>
+`;
+
+exports[`Modifier should add valued modifier for element 1`] = `
 <span
-  className="block-name  block-name_cool_lala"
+  className="block-name__element  block-name__element_cool_cool"
 />
 `;
 
 exports[`Modifier should not add falsy modifier for block 1`] = `
+<div
+  className="block-name"
+/>
+`;
+
+exports[`Modifier should not add falsy modifier for element 1`] = `
 <div
   className="block-name__element"
 />

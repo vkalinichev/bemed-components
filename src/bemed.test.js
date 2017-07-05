@@ -108,6 +108,38 @@ describe('Modifier', () => {
     expect(component.toJSON()).toMatchSnapshot()
   })
 
+  describe('Early configuration', () => {
+
+    it('should add truly modifier for element', () => {
+      const b = bemed('block-name')
+      const Element = b('element', { mod: ['cool']})
+      const component = renderer.create(<Element cool/>)
+      expect(component.toJSON()).toMatchSnapshot()
+    })
+
+    it('should add few truly modifiers for element', () => {
+      const b = bemed('block-name')
+      const Element = b('element', { mod: ['cool', 'feel']})
+      const component = renderer.create(<Element cool feel/>)
+      expect(component.toJSON()).toMatchSnapshot()
+    })
+
+    it('should not add falsy modifier for element', () => {
+      const b = bemed('block-name')
+      const Element = b('element', { mod: ['cool']})
+      const component = renderer.create(<Element cool={false}/>)
+      expect(component.toJSON()).toMatchSnapshot()
+    })
+
+    it('should add valued modifier for element', () => {
+      const b = bemed('block-name')
+      const Element = b.span('element', { mod: ['cool']})
+      const component = renderer.create(<Element cool='yes'/>)
+      expect(component.toJSON()).toMatchSnapshot()
+    })
+
+  })
+
 })
 
 describe('Custom Components', () => {

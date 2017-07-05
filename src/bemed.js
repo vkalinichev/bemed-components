@@ -2,7 +2,16 @@ import React from 'react'
 import tags from './tags'
 import addModificators from './addModificators'
 
-function BemedComponent(tagName, className, {mod, ...rest}) {
+function BemedComponent(tagName, className, options, {mod, ...rest}) {
+
+  if (options && options.mod && Array.isArray(options.mod)) {
+    mod = mod || {}
+    options.mod.forEach( _mod => {
+      mod[_mod] = rest[_mod]
+      delete rest[_mod]
+    })
+  }
+
   return React.createElement(
     tagName,
     {
@@ -21,11 +30,17 @@ function bemed(blockName) {
   /**
    * Generator of Blocks and Elements
    * @param {string} tagName - (optional) custom tag for Block or Element
-   * @param {string} elementName
+   * @param {string|undefined} elementName
+   * @param {object} options
    * @returns {Component}
    * @returns {function} Genetator with custom Component
    */
-  function b(tagName, elementName) {
+  function b(tagName, elementName, options) {
+
+    if (options === undefined && typeof elementName === 'object') {
+      options = elementName
+      elementName = undefined
+    }
 
     if (typeof tagName !== 'function' && elementName === undefined && tags.indexOf(tagName) === -1 ) {
       elementName = tagName
@@ -35,7 +50,7 @@ function bemed(blockName) {
     const isBlock = elementName === undefined
     const className = isBlock ? blockName : `${ blockName }__${ elementName }`
 
-    const Component = BemedComponent.bind(null, tagName, className)
+    const Component = BemedComponent.bind(null, tagName, className, options)
     Component.displayName = className
     return Component
   }

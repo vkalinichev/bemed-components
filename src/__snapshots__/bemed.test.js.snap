@@ -40,6 +40,30 @@ exports[`Element should create element with custom tag (SPAN) 1`] = `
 />
 `;
 
+exports[`Modifier Early configuration should add few truly modifiers for element 1`] = `
+<div
+  className="block-name__element  block-name__element_cool block-name__element_feel"
+/>
+`;
+
+exports[`Modifier Early configuration should add truly modifier for element 1`] = `
+<div
+  className="block-name__element  block-name__element_cool"
+/>
+`;
+
+exports[`Modifier Early configuration should add valued modifier for element 1`] = `
+<span
+  className="block-name__element  block-name__element_cool_yes"
+/>
+`;
+
+exports[`Modifier Early configuration should not add falsy modifier for element 1`] = `
+<div
+  className="block-name__element"
+/>
+`;
+
 exports[`Modifier should add few string modifiers for block 1`] = `
 <div
   className="block-name block-name_cool block-name_feel"

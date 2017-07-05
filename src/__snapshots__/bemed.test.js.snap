@@ -40,6 +40,18 @@ exports[`Element should create element with custom tag (SPAN) 1`] = `
 />
 `;
 
+exports[`Miccelaneous should provide global classNames for block 1`] = `
+<div
+  className="block-name global another-global"
+/>
+`;
+
+exports[`Miccelaneous should provide global classNames for element 1`] = `
+<div
+  className="block-name__element global another-global"
+/>
+`;
+
 exports[`Modifier Early configuration should add few truly modifiers for element 1`] = `
 <div
   className="block-name__element  block-name__element_cool block-name__element_feel"

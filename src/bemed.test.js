@@ -169,3 +169,20 @@ describe('Custom Components', () => {
   })
 
 })
+
+describe('Miccelaneous', () => {
+
+  it('should provide global classNames for block', () => {
+    const Block = bemed('block-name')()
+    const component = renderer.create(<Block className="global another-global"/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should provide global classNames for element', () => {
+    const b = bemed('block-name')
+    const Element = b('element')
+    const component = renderer.create(<Element className="global another-global"/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+})

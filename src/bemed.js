@@ -16,7 +16,7 @@ function BemedComponent(tagName, className, options, {mod, ...rest}) {
     tagName,
     {
       ...rest,
-      className: addModificators(className, mod)
+      className: addModificators(className, mod) + (rest.className ? ' ' + rest.className : '')
     })
 }
 

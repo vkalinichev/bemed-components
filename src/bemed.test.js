@@ -109,3 +109,31 @@ describe('Modifier', () => {
   })
 
 })
+
+describe('Custom Components', () => {
+
+  it('should create block', () => {
+    const b = bemed('block-name')
+    const FancyComponent = (props) => (
+      <fancy-element {...props}>
+        FancyComponent
+      </fancy-element>
+    )
+    const Element = b(FancyComponent)
+    const component = renderer.create(<Element/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  it('should create element', () => {
+    const b = bemed('block-name')
+    const FancyComponent = (props) => (
+      <fancy-element {...props}>
+        FancyComponent
+      </fancy-element>
+    )
+    const Element = b(FancyComponent, 'element')
+    const component = renderer.create(<Element/>)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
+})

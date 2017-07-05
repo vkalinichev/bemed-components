@@ -27,11 +27,7 @@ function bemed(blockName) {
    */
   function b(tagName, elementName) {
 
-    if (typeof tagName === 'function') {
-      return b.bind(null, tagName, elementName)
-    }
-
-    if (elementName === undefined && tags.indexOf(tagName) === -1 ) {
+    if (typeof tagName !== 'function' && elementName === undefined && tags.indexOf(tagName) === -1 ) {
       elementName = tagName
       tagName = 'div'
     }
@@ -41,7 +37,6 @@ function bemed(blockName) {
 
     const Component = BemedComponent.bind(null, tagName, className)
     Component.displayName = className
-
     return Component
   }
 

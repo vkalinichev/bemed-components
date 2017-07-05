@@ -12,6 +12,22 @@ exports[`Block should create block with custom tag (SPAN) 1`] = `
 />
 `;
 
+exports[`Custom Components should create block 1`] = `
+<fancy-element
+  className="block-name"
+>
+  FancyComponent
+</fancy-element>
+`;
+
+exports[`Custom Components should create element 1`] = `
+<fancy-element
+  className="block-name__element"
+>
+  FancyComponent
+</fancy-element>
+`;
+
 exports[`Element should create element 1`] = `
 <div
   className="block-name__element"

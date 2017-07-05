@@ -54,22 +54,22 @@ const Home = b()
 
 ### Declare Elements
 ```javascript
-const Roof = b('roof') 
-const Door = b('door')
+const Roof = b('roof', { mod: ['color']}) 
+const Door = b('door', { mod: ['opened']})
 const Windows = b('windows')   
-const Window = b.span('window') 
+const Window = b.span('window', { mod: ['large']}) 
 ```
 
 ### Write clean and expressive JSX
 ```jsx
 const BemedComponent = ({opened}) => (
  <Home>
-   <Roof mod={{color: 'red'}}/>     
+   <Roof color='red'/>     
    <Windows>
-     <Window mod="large"> + </Window>
+     <Window large> + </Window>
      <Window> + </Window>
    </Windows>
-   <Door mod={{opened}}/>
+   <Door opened={opened}/>
  </Home>
 )
 ```

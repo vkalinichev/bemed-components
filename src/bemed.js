@@ -1,10 +1,13 @@
 import React from 'react'
+import tags from './tags'
 
 import addModificators from './addModificators'
 
 const bemed = (blockName) => {
 
-  const b = (elementName, tagName = 'div') => {
+  const b = function b (elementName, tagName = 'div') {
+
+    if ( typeof elementName === 'function' ) return b.bind(null, null, elementName)
 
     let className = elementName ? `${ blockName }__${ elementName }` : blockName
 
@@ -20,7 +23,9 @@ const bemed = (blockName) => {
     return BemedComponent
   }
 
-  b.span = b.bind(null, null, 'span')
+  for (let i = 0; i < tags.length; i++ ) {
+    b[tags[i]] = b.bind(null, null, tags[i])
+  }
 
   return b
 }

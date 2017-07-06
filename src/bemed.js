@@ -2,7 +2,7 @@ import React from 'react'
 import tags from './tags'
 import addModificators from './addModificators'
 
-function BemedComponent(tagName, className, options, {mod, ...rest}) {
+function BemedComponent(tagName, className, options, {mod, innerRef, ...rest}) {
 
   if (options && options.mod && Array.isArray(options.mod)) {
     mod = mod || {}
@@ -16,6 +16,7 @@ function BemedComponent(tagName, className, options, {mod, ...rest}) {
     tagName,
     {
       ...rest,
+      ref: innerRef,
       className: addModificators(className, mod) + (rest.className ? ' ' + rest.className : '')
     })
 }
